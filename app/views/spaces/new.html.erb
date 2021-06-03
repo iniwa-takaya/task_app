@@ -1,6 +1,6 @@
 <div class="top-page">
   <div class="side-bar">
-    <%= render "shared/side_bar" %>
+    <%= render partial: "shared/side_bar", locals: { spaces: @spaces } %>
   </div>
   <div class="main-page">
     <div class="new-space">

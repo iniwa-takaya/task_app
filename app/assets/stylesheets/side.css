@@ -30,3 +30,13 @@ a {
   justify-content: center;
   border-bottom: 1px dotted black;
 }
+
+.side-space-name {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 5px 10px;
+  background-color:rgb(161, 119, 70)
+}
