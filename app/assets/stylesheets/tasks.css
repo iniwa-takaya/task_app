@@ -1,0 +1,12 @@
+.top-page {
+  display: flex;
+}
+.side-bar {
+  background-color: rgb(113, 135, 143);
+  width: 200px;
+  height: calc(100vh - 50px);
+}
+.main-page {
+  background-color: rgb(216, 237, 245);
+  width: calc(100vw - 200px);
+}

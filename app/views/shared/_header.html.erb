@@ -1,0 +1,17 @@
+<div class="header-all">
+  <div class="menu-bar">menu</div>
+  <div class="title">タイトル</div>
+  <div class="user-info">
+    <% if user_signed_in? %>
+      <div><%= link_to "#{current_user.nick_name}さんのページ", "#", class: "user-nickname" %>
+      </div>
+      <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+      </div>
+    <% else %>
+      <div><%= link_to 'ログイン', new_user_session_path, class: "login" %>
+      </div>
+      <div><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+      </div>
+    <% end %>
+  </div>
+</div>
