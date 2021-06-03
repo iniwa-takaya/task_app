@@ -38,5 +38,6 @@ a {
   justify-content: center;
   border: 1px solid black;
   margin: 5px 10px;
-  background-color:rgb(161, 119, 70)
+  background-color:rgb(161, 134, 103);
+  font-size: 15px;
 }

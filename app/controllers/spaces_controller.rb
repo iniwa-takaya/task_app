@@ -3,9 +3,11 @@ class SpacesController < ApplicationController
 
   def index
   end
+
   def new
     @space = Space.new
   end
+
   def create
     @space = Space.new(space_params)
     if @space.save
