@@ -1,7 +1,7 @@
 <div class="show-header">
   <div class="show-edit">
     <%= link_to "スペース名の変更", edit_space_path, method: :get, class: "room-edit" %>
-    <%= link_to "スペースの削除", "#", method: :delete, class:"room-destroy" %>
+    <%= link_to "スペースの削除", space_path, method: :delete, class:"room-destroy" %>
   </div>
   <div class="show-title"><%= @space.name %></div>
 </div>
