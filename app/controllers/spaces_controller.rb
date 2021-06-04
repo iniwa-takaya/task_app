@@ -1,5 +1,6 @@
 class SpacesController < ApplicationController
-  before_action :show_spaces, only: %i[index new]
+  before_action :show_spaces, only: %i[index new show]
+  before_action :find_params, only: %i[show]
 
   def index
   end
@@ -17,6 +18,9 @@ class SpacesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def space_params
@@ -25,5 +29,9 @@ class SpacesController < ApplicationController
 
   def show_spaces
     @spaces = Space.all.order('created_at DESC')
+  end
+
+  def find_params
+    @space = Space.find(params[:id])
   end
 end

@@ -11,6 +11,13 @@
 
   <body>
     <%= render "shared/header" %>
-    <%= yield %>
+    <div class="top-page">
+      <div class="side-bar">
+        <%= render partial: "shared/side_bar", locals: { spaces: @spaces } %>
+      </div>
+      <div class="main-page">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

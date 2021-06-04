@@ -13,6 +13,6 @@
 <div class="space-menu">
   <div class="space-menu-content">スペース一覧</div>
   <% spaces.each do |s| %>
-    <div class="side-space-name"><%= link_to "#{s.name}", "#"%></div>
+    <div class="side-space-name"><%= link_to "#{s.name}", space_path(s.id) %></div>
   <% end %>
 </div>
