@@ -1,13 +1,21 @@
-<div class="show-header">
-  <div class="show-edit">
-    <%= link_to "スペース名の変更", edit_space_path, method: :get, class: "room-edit" %>
-    <%= link_to "スペースの削除", space_path, method: :delete, class:"room-destroy" %>
+<div class="top-page">
+  <div class="side-bar">
+    <%= render partial: "shared/side_bar", locals: { spaces: @spaces } %>
   </div>
-  <div class="show-title"><%= @space.name %></div>
-</div>
-<div class="show-main">
-  <div class="show-content">
-    <div class="show-tasks"></div>
-    <div class="completed-tasks"></div>
+  <div class="main-page">
+    <div class="show-header">
+      <div class="show-edit">
+        <%= link_to "スペース名の変更", edit_space_path, method: :get, class: "room-edit" %>
+        <%= link_to "スペースの削除", space_path, method: :delete, class:"room-destroy" %>
+      </div>
+      <div class="show-title"><%= @space.name %></div>
+    </div>
+    <div class="show-main">
+      <div class="show-content">
+        <div class="show-tasks"></div>
+        <div class="completed-tasks"></div>
+      </div>
+    </div>
   </div>
 </div>
+
