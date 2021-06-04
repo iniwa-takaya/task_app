@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
-  before_action :show_spaces, only: %i[index new show]
-  before_action :find_params, only: %i[show]
+  before_action :show_spaces, only: %i[index new show edit update]
+  before_action :find_params, only: %i[show edit update]
 
   def index
   end
@@ -19,6 +19,17 @@ class SpacesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @space.update(space_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

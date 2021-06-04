@@ -1,0 +1,12 @@
+<div class="show-header">
+<div class="show-title"><%= "#{@space.name}の変更" %></div>
+</div>
+<div class="edit-main">
+  <%= form_with model: @space, url:space_path, local: true do |f| %>
+    <div>スペース名</div>
+    <div class="space-form">
+      <%= f.text_field :name, class:"space-name", id:"space-name", maxlength:"20" %>
+      <%= f.submit "変更" ,class:"space-create-btn" %>
+    </div>
+  <% end %>
+</div>
