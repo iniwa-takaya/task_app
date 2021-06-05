@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "spaces#index"
-  resources :spaces, only: %i[new create show edit update destroy]
+  resources :spaces, expect: %i[index show]  do
+    resources :tasks, only: %i[index create]
+  end
 end

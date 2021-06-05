@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
-  before_action :show_spaces, only: %i[index new create show edit update]
-  before_action :find_params, only: %i[show edit update destroy]
+  before_action :show_spaces, only: %i[index new create edit update]
+  before_action :find_params, only: %i[edit update destroy]
 
   def index
   end
@@ -16,9 +16,6 @@ class SpacesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
   end
 
   def edit
