@@ -1,7 +1,13 @@
 .show-header {
   display: flex;
 }
-
+.main-page {
+  display: flex;
+  flex-flow: column;
+}
+.show-header {
+  display: flex;
+}
 .show-edit {
   height: 100px;
   display: flex;
@@ -9,9 +15,8 @@
   justify-content: space-around;
   text-align: center;
 }
-
 .show-title {
-  height: 80px;
+  height: 100px;
   width: 60%;
   text-align: center;
   margin-top: 20px;
@@ -22,18 +27,24 @@
   flex-flow: column;
   justify-content: space-between;
 }
-.show-content {
+.tasks {
   height: 70vh;
+  background-color: blanchedalmond;
+}
+.task {
+  display: flex;
+  border: 1px solid black;
+  padding: 10px;
 }
 .form {
   display: flex;
   align-items: center;
 }
-.task-content {
+.from-task-content {
   height: 30px;
-  width: 40vh;
+  width: 400px;
 }
-.task-deadline {
+.form-task-deadline {
   margin: 0 5px;
   width: 40px;
 }

@@ -11,22 +11,22 @@
       <div class="show-title"><%= "「#{@space.name}スペース」のタスク一覧" %></div>
     </div>
     <div class="show-main">
-      <div class="task-content">
+      <div class="tasks">
         <%= render partial: 'shared/task', collection: @tasks %>
       </div>
       <div class="task-form">
         <%= form_with model: [@space, @task], class: 'form', local: true do |f| %>
           <div class="form-parts">
-            <%= f.text_field :content, class: "task-content" %>
+            <%= f.text_field :content, class: "from-task-content" %>
           </div>
           <div class="form-parts">
-            <%= f.datetime_field :deadline, class: "task-deadline" %>
+            <%= f.datetime_field :deadline, class: "form-task-deadline" %>
           </div>
           <div class="form-parts">
             <%= f.hidden_field :status %>
           </div>
           <div class="form-parts">
-            <%= f.submit '新規作成', class: "task-submit" %>
+            <%= f.submit '新規作成', class: "form-task-submit" %>
           </div>
         <% end %>
       </div>
