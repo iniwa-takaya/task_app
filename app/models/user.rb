@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
-  has_many :spaces
-  has_many :tasks
+  has_many :spaces, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 end

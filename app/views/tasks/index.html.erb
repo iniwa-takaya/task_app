@@ -1,19 +1,34 @@
 <div class="top-page">
   <div class="side-bar">
-    <%= render partial: "shared/side_bar", locals: { spaces: @spaces } %>
+    <%= render partial: "shared/side_bar" %>
   </div>
   <div class="main-page">
     <div class="show-header">
       <div class="show-edit">
-        <%= link_to "スペース名の変更", edit_space_path(@space.id), method: :get, class: "room-edit" %>
-        <%= link_to "スペースの削除", space_path(@space.id), method: :delete, class:"room-destroy" %>
+        <%= link_to "スペース名の変更", edit_space_path(@space), method: :get, class: "room-edit" %>
+        <%= link_to "スペースの削除", space_path(@space), method: :delete, class:"room-destroy" %>
       </div>
       <div class="show-title"><%= "「#{@space.name}スペース」のタスク一覧" %></div>
     </div>
     <div class="show-main">
-      <div class="show-content">
-        <div class="show-tasks"></div>
-        <div class="completed-tasks"></div>
+      <div class="task-content">
+        <%= render partial: 'shared/task', collection: @tasks %>
+      </div>
+      <div class="task-form">
+        <%= form_with model: [@space, @task], class: 'form', local: true do |f| %>
+          <div class="form-parts">
+            <%= f.text_field :content, class: "task-content" %>
+          </div>
+          <div class="form-parts">
+            <%= f.datetime_field :deadline, class: "task-deadline" %>
+          </div>
+          <div class="form-parts">
+            <%= f.hidden_field :status %>
+          </div>
+          <div class="form-parts">
+            <%= f.submit '新規作成', class: "task-submit" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

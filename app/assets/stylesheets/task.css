@@ -1,0 +1,39 @@
+.show-header {
+  display: flex;
+}
+
+.show-edit {
+  height: 100px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.show-title {
+  height: 80px;
+  width: 60%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+}
+.show-main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.show-content {
+  height: 70vh;
+}
+.form {
+  display: flex;
+  align-items: center;
+}
+.task-content {
+  height: 30px;
+  width: 40vh;
+}
+.task-deadline {
+  margin: 0 5px;
+  width: 40px;
+}

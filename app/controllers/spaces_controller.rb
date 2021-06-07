@@ -1,5 +1,4 @@
 class SpacesController < ApplicationController
-  before_action :show_spaces, only: %i[index new create edit update]
   before_action :find_params, only: %i[edit update destroy]
 
   def index
@@ -23,7 +22,7 @@ class SpacesController < ApplicationController
 
   def update
     if @space.update(space_params)
-      redirect_to root_path
+      redirect_to space_tasks_path(@space)
     else
       render :edit
     end
@@ -37,11 +36,7 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:name).merge(user_id: current_user.id)
-  end
-
-  def show_spaces
-    @spaces = Space.all.order('created_at DESC')
+    params.require(:space).permit(:name, :space_id).merge(user_id: current_user.id)
   end
 
   def find_params

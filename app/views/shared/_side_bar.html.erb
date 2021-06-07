@@ -12,8 +12,9 @@
 </div>
 <div class="space-menu">
   <div class="space-menu-content">スペース一覧</div>
-  
-  <% spaces.each do |s| %>
-    <div class="side-space-name"><%= link_to "#{s.name}", space_tasks_path(s.id) %></div>
+  <% if user_signed_in? %>
+    <% current_user.spaces.order('created_at DESC').each do |space| %>
+      <div class="side-space-name"><%= link_to "#{space.name}", space_tasks_path(space) %></div>
+    <% end %>
   <% end %>
 </div>

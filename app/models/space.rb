@@ -3,5 +3,5 @@ class Space < ApplicationRecord
   validates :name, uniqueness: { scope: :user }
 
   belongs_to :user
-  has_many :spaces
+  has_many :tasks, dependent: :destroy
 end
