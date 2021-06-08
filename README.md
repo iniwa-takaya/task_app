@@ -29,29 +29,18 @@
 
 ### task_group テーブル
 
-| Column      | Type      | Options          |
-| ----------- | --------- | ---------------- |
-| g_name      | string    | null: false      |
+| Column       | Type      | Options          |
+| ------------ | --------- | ---------------- |
+| g_name       | string    | null: false      |
+| g_description| string    | null: false      |
+ 
 
 ### Association
 
 - has_many :task_group_users
 - has_many :users, through: :task_group_users
-- has_many :task_group_spaces
-- has_many :spaces, through: :task_group_spaces
+- has_many :spaces
 - has_many :tasks
-
-### task_group_spaces テーブル
-
-| Column      | Type       | Options          |
-| ----------- | ---------- | ---------------- |
-| task_group  | references | foreign_key: true|
-| space       | references | foreign_key: true|
-
-### Association
-
-- belongs_to :task-group
-- belongs_to :user
 
 ### spaces テーブル
 
@@ -62,9 +51,8 @@
 
 ### Association
 
-- has_many :tasks
-- has_many :task_group_spaces
-- has_many :task_groups, through: :task_group_spaces
+- belongs_to : task_group
+- has_many   :tasks
 
 ### tasks テーブル
 
@@ -79,4 +67,4 @@
 #### Association
 
 - belongs_to :space
-- belongs_to :task_groups
+- belongs_to :task_group
