@@ -1,35 +1,29 @@
-<div class="top-page">
-  <div class="side-bar">
-    <%= render partial: "shared/side_bar" %>
+
+<div class="show-header">
+  <div class="show-title"><%= "「#{@space.name}」のタスク一覧" %></div>
+  <div class="show-edit">
+    <%= link_to "スペース名の変更", edit_space_path(@space), method: :get, class: "room-edit" %>
+  <%= link_to "スペースの削除", space_path(@space), method: :delete, data: { confirm: 'ルームを削除すると、ルーム内のタスクも同時に削除されます' }, class:"room-destroy" %>
   </div>
-  <div class="main-page">
-    <div class="show-header">
-      <div class="show-edit">
-        <%= link_to "スペース名の変更", edit_space_path(@space), method: :get, class: "room-edit" %>
-        <%= link_to "スペースの削除", space_path(@space), method: :delete, class:"room-destroy" %>
+</div>
+<div class="show-main">
+  <div class="tasks">
+    <%= render partial: 'shared/task', collection: @tasks %>
+  </div>
+  <div class="task-form">
+    <%= form_with model: [@space, @task], class: 'form', local: true do |f| %>
+      <div class="form-parts">
+        <%= f.text_field :content, class: "from-task-content" %>
       </div>
-      <div class="show-title"><%= "「#{@space.name}スペース」のタスク一覧" %></div>
-    </div>
-    <div class="show-main">
-      <div class="tasks">
-        <%= render partial: 'shared/task', collection: @tasks %>
+      <div class="form-parts">
+        <%= f.datetime_field :deadline, class: "form-task-deadline" %>
       </div>
-      <div class="task-form">
-        <%= form_with model: [@space, @task], class: 'form', local: true do |f| %>
-          <div class="form-parts">
-            <%= f.text_field :content, class: "from-task-content" %>
-          </div>
-          <div class="form-parts">
-            <%= f.datetime_field :deadline, class: "form-task-deadline" %>
-          </div>
-          <div class="form-parts">
-            <%= f.hidden_field :status %>
-          </div>
-          <div class="form-parts">
-            <%= f.submit '新規作成', class: "form-task-submit" %>
-          </div>
-        <% end %>
+      <div class="form-parts">
+        <%= f.hidden_field :status %>
       </div>
-    </div>
+      <div class="form-parts">
+        <%= f.submit '新規作成', class: "form-task-submit" %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,20 +1,25 @@
 <div class=side-menu>
-  <%= link_to 'タスク作成', root_path%>
+  <%= link_to 'トップページ', root_path%>
+</div>
+<div class=side-menu-title>
+  - スペース管理 -
+</div>
+<% if user_signed_in? %>
+  <div class=side-menu>
+    <%= link_to 'スペースの作成', new_space_path %>
+  </div>
+  <div class="space-menu">
+    <div class="space-menu-content">スペース一覧</div>
+    <div class="space-menu-index">
+      <% current_user.spaces.order('created_at DESC').each do |space| %>
+        <div class="side-space-name"><%= link_to "#{space.name}", space_tasks_path(space) %></div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class=side-menu-title>
+  - グループ管理 -
 </div>
 <div class=side-menu>
-  <%= link_to '期限が1週間以内のタスク', "#"%>
-</div>
-<div class=side-menu>
-  <%= link_to '完了済みのタスク', "#"%>
-</div>
-<div class=side-menu>
-  <%= link_to 'スペースの作成', new_space_path %>
-</div>
-<div class="space-menu">
-  <div class="space-menu-content">スペース一覧</div>
-  <% if user_signed_in? %>
-    <% current_user.spaces.order('created_at DESC').each do |space| %>
-      <div class="side-space-name"><%= link_to "#{space.name}", space_tasks_path(space) %></div>
-    <% end %>
-  <% end %>
+  <%= link_to '期限が1週間以内のタスク', root_path%>
 </div>

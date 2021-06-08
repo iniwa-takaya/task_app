@@ -1,3 +1,13 @@
+.side-menu-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  height: 50px;
+  background-color: burlywood;
+  border-top: 3px solid brown;
+  border-bottom: 3px solid brown;
+}
 .side-menu {
   height: 50px;
   border: 1px solid black;
@@ -15,12 +25,17 @@ a {
 }
 
 .space-menu {
-  height: calc(100vh - 280px);
+  height: calc(100vh - 500px);
   border: 1px solid black;
   margin: 3px;
   text-align: center;
   background-color: white;
   border-radius : 5px;
+}
+
+.space-menu-index {
+  height: calc(100vh - 560px);
+  overflow: scroll;
 }
 
 .space-menu-content {
@@ -29,10 +44,11 @@ a {
   align-items: center;
   justify-content: center;
   border-bottom: 1px dotted black;
+  background-color: white;
 }
 
 .side-space-name {
-  height: 40px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;

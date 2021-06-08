@@ -1,5 +1,5 @@
 .header-all {
-  height: 50px;
+  height: 100px;
   background-color: rgb(43, 7, 90);
   display: flex;
   justify-content: space-between;
@@ -7,15 +7,15 @@
 }
 
 .menu-bar {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   border-radius : 10px;
   background-color: white;
   margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: small;
+  font-size: 20px;
 }
 
 .title {
@@ -24,10 +24,10 @@
 }
 
 .user-info {
-  width: 100px;
-  height: 45px;
+  height: 80px;
   background-color: white;
   margin: auto 5px;
+  padding: 0px 5px;
   font-size: 12px;
   display: flex;
   flex-flow: column;

@@ -7,10 +7,18 @@
     
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <script src="https://kit.fontawesome.com/7aec44cf33.js" crossorigin="anonymous"></script> %>
   </head>
 
   <body>
     <%= render "shared/header" %>
-    <%= yield %>
+    <div class="top-page">
+      <div class="side-bar">
+        <%= render partial: "shared/side_bar", locals: { spaces: @spaces } %>
+      </div>
+      <div class="main-page">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
