@@ -15,7 +15,7 @@ class TasksController < ApplicationController
       render :index
     end
   end
-
+  
   private
 
   def task_params

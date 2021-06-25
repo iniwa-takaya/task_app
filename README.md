@@ -22,7 +22,7 @@
 | task_group  | references | foreign_key: true|
 | user        | references | foreign_key: true|
 
-### Association
+#### Association
 
 - belongs_to :task-group
 - belongs_to :user
@@ -35,7 +35,7 @@
 | g_description| string    | null: false      |
  
 
-### Association
+#### Association
 
 - has_many :task_group_users
 - has_many :users, through: :task_group_users
@@ -49,7 +49,7 @@
 | s_name       | string    | null: false, unique:true |
 | s_description| string    | null: false |
 
-### Association
+#### Association
 
 - belongs_to : task_group
 - has_many   :tasks
